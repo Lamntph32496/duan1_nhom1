@@ -1,11 +1,11 @@
 
-<div class="login-register-area pb-50">
-		    <div class="container">
+<div class="login-register-area pb-50" style="margin:auto;">
+		    <div class="container" style="text-align: center;">
 		        <div class="row">
                     <!--Login Form Start-->
 		            <div class="col-md-6 col-12">
 		                <div class="customer-login-register">
-		                    <div class="form-login-title">
+		                    <div class="form-login-title" >
 		                        <h2>Login</h2>
 		                    </div>
 		                    <div class="login-form">

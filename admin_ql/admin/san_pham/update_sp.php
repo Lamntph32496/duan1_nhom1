@@ -1,3 +1,14 @@
+<?php 
+if(is_array($sanpham)) {
+    extract($sanpham);
+}
+    $hinhpath="../upload/".$img;
+        if (is_file($hinhpath)) {
+            $hinh="<img src='".$hinhpath."' height='80'>";
+        }else {
+            $hinh="no photo";
+        }
+    ?>
 <style>
     form {
             width: 80%;

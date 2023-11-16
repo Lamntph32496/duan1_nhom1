@@ -65,46 +65,40 @@
 						<i class='bx bx-filter' ></i>
 					</div>
 					<div class="row">
-            <table class="ds_table">
+                    <table>
                 <tr>
-                    <td></td>
-                    <td>Id sản phẩm </td>
-                    <td>Tên sản phẩm</td>
-                    <td>Hình ảnh</td>
-                    <td>Giá sản phẩm</td>
-                    <td>lượt xem</td>
-                    <td> chức năng </td>
+                    <th></th>
+                    <th>Mã loại</th>
+                    <th>Tên loại</th>
+                    <th>Hình</th>
+                    <th>Giá</th>
+                    <th>Lượt xem</th>
+                    <th></th>
                 </tr>
-            
-                            <tr>
-                                <td> <input type="checkbox" name="" id=""></td>
-                                <td> 2</td>
-                                <td> Điên thoại iphonne 12pro</td>
-                                <td> <img src="img/anhdt8.jpg" alt=""></td>
-                                <td>15.000 </td>
-                                <td> 20 </td>
+                <?php
+                foreach ($listsanpham as $sanpham) {
+                    extract($sanpham);
+                    $suasp = "index.php?act=suasp&id=" . $id;
+                    $xoasp = "index.php?act=xoasp&id=" . $id;
+                    $hinhpath = "../upload/" . $img;
+                    if (is_file($hinhpath)) {
+                        $hinh = "<img src='" . $hinhpath . "' height='80'>";
+                    } else {
+                        $hinh = "no photo";
+                    }
+                    echo '<tr>
+                            <td><input type="checkbox" name="" id=""></td>
+                            <td>' . $id . '</td>
+                            <td>' . $name . '</td>
+                            <td>' . $hinh . '</td>
+                            <td>' . $price . '</td>
+                            <td>' . $luotxem . '</td>
 
-                                <td >
-                                <a href="' . $suasp . '">  <input type="button" value="sua"></a>
-                                <a href="' . $xoasp . '">  <input type="button" value="xoa"></a>
-                                <a href="index.php?act=ct_sp">  <input type="button" value="Xem "></a>
-                                </td>
-                            </tr> 
+                            <td><a href="' . $suasp . '"><input type="button" value="Sửa"></a><a href="' . $xoasp . '"><input type="button" value="Xóa"></a></td>
+                        </tr>';
+                }
+                ?>
 
-                            <tr>
-                                <td> <input type="checkbox" name="" id=""></td>
-                                <td> 2</td>
-                                <td> Samsung </td>
-                                <td> <img src="img/anhdt4.jpg" alt=""></td>
-                                <td>18.500 </td>
-                                <td> 50 </td>
-
-                                <td >
-                                <a href="' . $suasp . '">  <input type="button" value="sua"></a>
-                                <a href="' . $xoasp . '">  <input type="button" value="xoa"></a>
-                                <a href="index.php?act=ct_sp">  <input type="button" value=Xem sp"></a>
-                                </td>
-                            </tr> 
             </table>
             <div class="row_btn02">
                 <button class="seclect" type="button">Chọn tất cả</button>
